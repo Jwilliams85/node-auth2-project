@@ -42,7 +42,7 @@ router.post("/login", (req, res) => {
         // compare the password the hash stored in the database
         if (user && bcryptjs.compareSync(password, user.password)) {
           const token = makeJwt(user);
-          res.status(200).json({ message: "Welcome to our API" });
+          res.status(200).json({ message: "Welcome to our API", token});
         } else {
           res.status(401).json({ message: "Invalid credentials" });
         }
@@ -66,7 +66,7 @@ function makeJwt(user) {
   const secret = process.env.JWT_SECRET || "is it secret, is it safe?"
 
   const options = {
-    expiresIn: '1hr'
+    expiresIn: '1hr',
   }
 return jwt.sign(payload, secret, options)
 }
