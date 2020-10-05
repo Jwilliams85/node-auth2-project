@@ -49,3 +49,17 @@ Use **JSON Web Tokens** to keep users authenticated across requests.
 Follow these steps for completing your project.
 
 - [ ] Submit a pull request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
+
+
+## Server
+ -produce a token 
+ -add needed data to the token 
+ -send the token as part of the response
+ - when a new request comes in to restricted area
+        -verify that the token is valid
+        -make the payload (data) avavailable for the rest of the API
+
+## Client 
+-store the token
+-send the token on a following requests
+-destroy the token on logout
